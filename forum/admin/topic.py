@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.urls import reverse
 
 from forum.models.topic import Topic
 
@@ -14,3 +15,11 @@ class TopicAdmin(admin.ModelAdmin):
     raw_id_fields = ("created_by",)
     date_hierarchy = "created"
     ordering = ("created", "created_by")
+
+    def get_absolute_url(self):
+        return reverse(
+            "detail",
+            args=[
+                self.slug,
+            ],
+        )

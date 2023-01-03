@@ -22,6 +22,7 @@
                 <a href="{% url "dashboard" %}"  class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
 
                 <a href="{% url "topic_list" %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Topic</a>
+
               </div>
             </div>
           </div>
@@ -103,7 +104,7 @@
       {% endblock %}
   </div>
   <div>
-      {% block list %}
+      {% block content %}
       {% endblock %}
  </div>
 </body>

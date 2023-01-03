@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from forum.views import dashboard, topic_list
+from forum.views import dashboard, topic_detail, topic_list
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -25,4 +25,11 @@ urlpatterns = [
     path("account/", include("django.contrib.auth.urls")),
     path("forum/", dashboard.dashboard, name="dashboard"),
     path("list/", topic_list.TopicListView.as_view(), name="topic_list"),
+    # path("detail/", topic_detil.TopicDetailView.as_view(), name="topic_detil"),
+    # path("detail", topic_detil.TopicDetailView.as_view(), name="topic_detail"),
+    path(
+        "<pk>/",
+        topic_detail.TopicDetailView.as_view(),
+        name="topic_detail",
+    ),
 ]
