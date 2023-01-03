@@ -1,3 +1,3 @@
 from .category import Category
-from .comments import Comment
-from .topics import Topic
+from .comment import Comment
+from .topic import Topic

@@ -1,8 +1,9 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.list import ListView
-from topics.models.topics import Topic
+
+from forum.models.topic import Topic
 
 
-class QuestionListView(LoginRequiredMixin, ListView):
+class TopicListView(LoginRequiredMixin, ListView):
     model = Topic
-    template_name = "question/question_list.html"
+    template_name = "topic/topic_list.html"

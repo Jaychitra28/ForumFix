@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from forum.views import dashboard
+from forum.views import dashboard, topic_list
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -24,4 +24,5 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
     path("account/", include("django.contrib.auth.urls")),
     path("forum/", dashboard.dashboard, name="dashboard"),
+    path("list/", topic_list.TopicListView.as_view(), name="topic_list"),
 ]
