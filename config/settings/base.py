@@ -83,3 +83,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 NPM_BIN_PATH = "/usr/bin/npm"
+LOGIN_REDIRECT_URL = "dashboard"
+LOGIN_URL = "login"
+LOGOUT_REDIRECT_URL = "login"
