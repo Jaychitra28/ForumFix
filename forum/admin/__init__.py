@@ -1,2 +1,2 @@
-from .category import CategoryAdmin
-from .topic import TopicAdmin
+from .category import CategoriesAdmin
+from .thread import ThreadAdmin

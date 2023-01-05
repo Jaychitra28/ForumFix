@@ -1,15 +1,16 @@
 from django.contrib.auth.models import User
 from django.db import models
-from model_utils.models import TimeStampedModel
 
-from .topic import Topic
+from .thread import Thread
 
 
-class Comment(models.Model):
+class Response(models.Model):
     message = models.TextField(max_length=4000)
-    topic = models.ForeignKey(Topic, related_name="comments", on_delete=models.CASCADE)
+    thread = models.ForeignKey(
+        Thread, related_name="response", on_delete=models.CASCADE
+    )
     created_by = models.ForeignKey(
-        User, related_name="comments", on_delete=models.CASCADE
+        User, related_name="response", on_delete=models.CASCADE
     )
     updated_by = models.ForeignKey(
         User, null=True, related_name="+", on_delete=models.CASCADE
